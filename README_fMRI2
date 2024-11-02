@@ -1,0 +1,14 @@
+1) Overview
+In my second MRI internship, I developed three Python scripts that handle General Linear Model (GLM) analysis, machine learning, and representational similarity analysis (RSA). These scripts are titled `glm`, `pattern`, and `rsa`, respectively. Below is a summary of the requirements needed to run them.
+
+2) Software Requirements  
+- Python: Ensure you have a compatible editor, such as Visual Studio Code or Jupyter Notebook.
+- Python Packages: Install `nipype`, along with other essential packages such as `nilearn`, `sklearn`, `numpy`, and `pandas`. Each script includes the specific packages needed—please refer to them for a complete list.
+
+3) Data
+The scripts are configured to analyze data from a face-processing experiment involving participant 1. For access to the raw data, please contact Professor Jansen or Ina Thome. You will need anatomical and functional images as well as files containing event onsets and task information. 
+
+The scripts here are optimized to run on preprocessed data (processed via SPM using the Nipype interface; see my fMRI 1 code for further details). For a comprehensive breakdown of the analysis steps, please consult the documentation embedded within each script. The scripts can also be adapted to other datasets with appropriate modifications, particularly regarding file names and data locations.
+
+4) Resources:
+All my scripts were developed based on this tutorial: https://lukas-snoek.com/NI-edu/index.html

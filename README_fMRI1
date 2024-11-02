@@ -1,0 +1,35 @@
+1) Description
+During my first MRI internship, I wrote two Python scripts to preprocess data and perform sanity checks to ensure the preprocessing steps worked correctly and to identify any abnormalities that needed addressing. Below is a brief overview of the requirements for running the code. This is not a detailed installation guide for all the necessary software and packages.
+
+The approach I used is tailored to my system and specific needs at the time of the internship, and it may not represent the best method for installation. For the most accurate and up-to-date installation instructions, please refer to the official websites of the respective packages. They offer best practices and expert advice. If you encounter difficulties, feel free to reach out for assistance with the scripts and installation process.
+
+2) Software Requirements
+- SPM Standalone and MATLAB Compiler Runtime: Alternatively, you can use SPM with MATLAB (requires a license).
+- Python: Ensure you have a compatible code editor, such as Visual Studio Code or Jupyter Notebook.
+- Python package nipype: For a quick introduction, visit https://miykael.github.io/nipype_tutorial/notebooks/introduction_nipype.html#1.
+
+Notes:
+- Setting up nipype and running SPM Standalone through it can be complex. An alternative is using the Docker image described here: https://miykael.github.io/nipype_tutorial/notebooks/introduction_docker.html. You'll need to install Docker first, preferably Docker Desktop.
+- The provided Docker image uses an older version of nipype. You have three options:
+    1. Install the latest nipype version within the existing container and continue using it.
+    2. Modify the Docker file to create a new Docker image with the updated nipype version.
+    3. If you're familiar with Docker, consider using Neurodocker to build a custom image.
+- If you're not comfortable with Docker, try installing SPM Standalone directly. Note that issues with SPM Standalone might be specific to my system.
+- If using the Docker image, specify the paths for your data, code, and output results. You can run the following terminal command to open a new container and start Jupyter Notebook:
+
+    docker run -it \
+      -v {path_to_your_data_folder}:/data \
+      -v {path_to_your_code_folder}:/home/neuro/nipype_tutorial \
+      -v {path_to_output_folder}:/output \
+      -p 8888:8888 \
+      miykael/nipype_tutorial \
+      jupyter notebook --notebook-dir=/home/neuro/nipype_tutorial
+      
+3) Data
+The scripts are designed to analyze data from participants 1 and 6 in a face processing experiment. To access the data, please contact Professor Jansen or Ina Thome. In addition to anatomical and functional images, you will need files containing event onsets and task information. The scripts can of course be ran on other data set with appropriate modification, mostly regarding the location of data, names of files.
+
+4) Some Resources
+- Nipype Tutorial: If you are new to nipype, I recommend starting with this tutorial: https://miykael.github.io/nipype_tutorial/
+- Preprocessing and Analysis Principles: For understanding the basic principles behind preprocessing steps and analysis, check out this tutorial: https://lukas-snoek.com/NI-edu/index.html
+- SPM GUI Guidance: If you have difficulties setting parameters for preprocessing steps, refer to common practices used in the SPM GUI here: https://andysbrainbook.readthedocs.io/en/latest/SPM/SPM_Overview.html
+
